@@ -4,9 +4,7 @@ import ProductItem from '../ProductItem/ProductItem'
 const ProductList = ({ products }) => { 
     return (
         <ul className="product-list">
-            {products.map(product => {
-                return <ProductItem product={product.name} key={product.id} />
-            })}
+            { products.map(product => <ProductItem product={product.name} key={product.id} />) }
         </ul>
     );
 }
