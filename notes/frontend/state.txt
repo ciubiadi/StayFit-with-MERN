@@ -1,0 +1,5 @@
+************************************************ PREV STATE ************************************************
+If the state update depeds on the previous state's data, the setState can take a function as a parameter which 
+return a new state snapshot and React will then schedule all these function calls and guarantee that they are 
+executed in the right order so that even if a state update was deferred, by the time  the update thereafter executes,
+it guarantees the first one executed as well. 
