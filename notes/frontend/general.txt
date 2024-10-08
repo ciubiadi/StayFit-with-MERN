@@ -1,0 +1,6 @@
+Presentational components vs Stateful components
+1. Presentational components
+Components which outputs some content, apply some styling, some structure
+
+2. Stateful components
+Smart components that manage state and orchestrate that their child components receive new data for example.
