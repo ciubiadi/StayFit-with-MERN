@@ -1,8 +1,8 @@
 Approach #1
 - "pages" folder will hold the components that are in the end rendered as full screen pages
 - "components" folder will hold components that are not used as full screen components but instead
-are used only in parts of the screen ( buttons, the new activity page etc form )
+are used only in parts of the screen ( buttons, the new product page etc form )
 
 Approach #2
 - Split logic by feature, creating "pages" and "components" subfolders for "places" folder and 
-for the "user" folder.
+the same subfolders for the "user" folder.
