@@ -1,31 +1,38 @@
-import React from 'react'
+import React from 'react';
+import Card from '../../../shared/components/UIElements/Card/Card';
 import './ActivityList.css';
 import ActivityItem from '../ActivityItem/ActivityItem';
 
-const ActivityList = (props) => {
-  if(props.items.length === 0) {
-    return (<div>
-        <div>
-          <h2>No activities found. Time to train!</h2>
+const ActivityList = props => {
+  console.log('activitylist props: ', props);
+  if (props.items.length === 0) {
+    return (
+      <div className="activity-list center">
+        <Card>
+          <h2>No places found. Maybe create one?</h2>
           <button>Share Activity</button>
-        </div>
-      </div>);
+        </Card>
+      </div>
+    );
   }
-  
-  return <ul>
-    {props.items.map(activity => 
-      <ActivityItem 
-        key={activity.id} 
-        id={activity.id} 
-        image={activity.imageURL} 
-        title={activity.title} 
-        description={activity.description} 
-        type={activity.type}
-        creatorId={activity.creatorId}
-        coordinates={activity.location}
-      />
-    )}
-  </ul>
-}
 
-export default ActivityList
+  return (
+    <ul className="activity-list">
+      {props.items.map(activity => (
+        <ActivityItem
+          key={activity.id}
+          id={activity.id}
+          imageURL={activity.imageURL}
+          title={activity.title}
+          type={activity.type}
+          distance={activity.distance}
+          duration={activity.duration}
+          creatorId={activity.creatorId}
+          coordinates={activity.location}
+        />
+      ))}
+    </ul>
+  );
+};
+
+export default ActivityList;

@@ -1,28 +1,47 @@
-import React from 'react'
-import './MainNavigation.css';
-import MainHeader from '../MainHeader/MainHeader'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import NavLinks from '../NavLinks/NavLinks';
+import MainHeader from '../MainHeader/MainHeader';
+import NavLinks from '../NavLinks/NavLinks'
+import SideDrawer from '../SideDrawer/SideDrawer';
+import Backdrop from '../../UIElements/Backdrop/Backdrop';
+import './MainNavigation.css';
 
 const MainNavigation = props => {
-  return (
-    <MainHeader className="header-section">
-      <button>
-        <span />
-        <span />
-        <span />
-      </button>
-      <h1>
-        <Link to="/">
-          StayFit
-        </Link>
-      </h1>
-      <nav>
-        <NavLinks/>
-      </nav>
-    </MainHeader>
-  )
-}
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
-export default MainNavigation
+  const openDrawerHandler = () => {
+    setDrawerIsOpen(true);
+  };
+
+  const closeDrawerHandler = () => {
+    setDrawerIsOpen(false);
+  };
+
+  return (
+    <React.Fragment>
+      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
+      <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
+
+      <MainHeader>
+        <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+          <span />
+          <span />
+          <span />
+        </button>
+        <h1 className="main-navigation__title">
+          <Link to="/">YourPlaces</Link>
+        </h1>
+        <nav className="main-navigation__header-nav">
+          <NavLinks />
+        </nav>
+      </MainHeader>
+    </React.Fragment>
+  );
+};
+
+export default MainNavigation;
