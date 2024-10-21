@@ -1,10 +1,9 @@
 import './App.css';
 import Users from './user/pages/Users';
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import UserActivities from './activities/pages/UserActivities';
 import MainNavigation from './shared/components/Navigation/MainNavigation/MainNavigation';
-import NewActivity from './activities/pages/NewActivity';
+import NewActivity from './activities/pages/NewActivity/NewActivity';
 import StravaInfo from './activities/pages/StravaInfo';
 
 function App() {
