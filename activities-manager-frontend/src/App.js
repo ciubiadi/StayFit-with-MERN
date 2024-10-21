@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import UserActivities from './activities/pages/UserActivities';
 import MainNavigation from './shared/components/Navigation/MainNavigation/MainNavigation';
 import NewActivity from './activities/pages/NewActivity';
+import StravaInfo from './activities/pages/StravaInfo';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route path="/" exact={true}>
             <Users />
+          </Route>
+          <Route path="/strava-activities" exact>
+            <StravaInfo />
           </Route>
           <Route path="/:userId/activities" exact>
             <UserActivities />

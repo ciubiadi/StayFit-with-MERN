@@ -25,7 +25,8 @@ const ActivityItem = props => {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <Map center={props.coordinates} zoom={16} />
+          {/* <Map center={props.coordinates} zoom={16} /> */}
+          <h1 style={{textAlign: 'center'}}>Activity details</h1>
         </div>
       </Modal>
       <li className="activity-item">

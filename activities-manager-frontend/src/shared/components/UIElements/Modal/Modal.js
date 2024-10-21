@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
@@ -44,5 +44,6 @@ const Modal = props => {
     </React.Fragment>
   );
 };
+
 
 export default Modal;
